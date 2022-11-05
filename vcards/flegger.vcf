@@ -1,0 +1,15 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Legger;Federica;;;
+FN:Federica Legger
+ORG:Elemento Modular Cloud;
+EMAIL;type=INTERNET;type=pref:flegger@elemento.cloud
+item1.URL:https://www.elemento.cloud/
+item1.X-ABLabel:Elemento Website
+item2.URL;type=linkedin:https://www.linkedin.com/in/federicalegger
+item2.X-ABLabel:LinkedIn
+item3.URL;type=github:https://github.com/leggerf
+item3.X-ABLabel:GitHub
+item4.ADR;type=OFFICE;type=pref:;;Via Virginio Allione 2;Cuneo;CN;12100;Italia
+item4.X-ABADR:it
+END:VCARD

@@ -1,0 +1,27 @@
+html {
+    background-color: #FFA601;
+}
+
+.supercontainer {
+    position: absolute;
+    display: grid;
+    grid-template-columns: auto auto;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+}
+
+@media (orientation: portrait) {
+    .supercontainer {
+        grid-template-columns: auto;
+    }
+}
+
+.container {
+    /* display: table-cell; */
+    width: 100%;
+    height: 50vh;
+    border: none;
+}
