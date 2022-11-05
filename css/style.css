@@ -35,6 +35,12 @@ body {
     -webkit-align-items: center; 
     align-items: center;
 }
+.checkbox {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
 .container {
     width: var(--card-width);
     height: var(--card-height);
@@ -186,7 +192,7 @@ body {
     font-family: 'Arimo', sans-serif;
     background: linear-gradient(270deg, var(--accent-color) var(--logo-front-shift), var(--dark-color) var(--logo-front-shift));
 }
-.container:hover .card, .container:focus .card, .active-card {
+.container:hover .card, .checkbox:checked + .container .card {
     -webkit-transform: rotateY(180deg)  scale(1.1);
     -moz-transform: rotateY(180deg)  scale(1.1);
     -ms-transform: rotateY(180deg)  scale(1.1);
