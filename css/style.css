@@ -16,6 +16,7 @@
     --logo-bg-width: calc(var(--logo-width) + var(--logo-border-width));
     --logo-bg-top: calc((var(--card-height) - var(--logo-bg-height)) / 2);
     --logo-back-shift: calc(100% - var(--logo-front-shift));
+    --button-size: calc(var(--card-width) / 7);
     --title-size: calc(var(--card-width) / 10);
     --data-size: calc(var(--card-width) / 15);
     --subtitle-size: calc(var(--card-width) / 25);
@@ -152,7 +153,7 @@ body {
     mask-repeat: no-repeat;
     -webkit-mask-size: fill;
     -webkit-mask-image: url(../img/elemento_logo_bg.svg);
-    -webkit-mask-position: center center;
+    -webkit-mask-position: center top;
     -webkit-mask-repeat: no-repeat;
 }
 .qr::before {
@@ -173,7 +174,7 @@ body {
     mask-repeat: no-repeat;
     -webkit-mask-size: fill;
     -webkit-mask-image: url(../img/elemento_logo.svg);
-    -webkit-mask-position: center center;
+    -webkit-mask-position: center top;
     -webkit-mask-repeat: no-repeat;
 }
 .qr::after {
@@ -222,7 +223,7 @@ body {
     -moz-transform: rotateY(180deg)  scale(1.1);
     -ms-transform: rotateY(180deg)  scale(1.1);
     transform: rotateY(180deg)  scale(1.1);
-    transform-origin: center center;
+    transform-origin: center top;
 }
 .payoff {
     position: absolute;
@@ -263,33 +264,70 @@ body {
     line-height: var(--subtitle-size);
     font-size: var(--subtitle-size);
 }
+.picture {
+    position: absolute;
+    top: 45%;
+    left: var(--subtitle-size);
+    height: var(--logo-height);
+    width: 50%;
+    transform: translateY(-50%);
+}
+.picture::after
+{
+    display:block;
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    -moz-box-shadow:inset 0px 0px 6px 6px var(--dark-color);
+    -webkit-box-shadow:inset 0px 0px 6px 6px var(--dark-color);
+    box-shadow:inset 0px 0px 6px 6px var(--dark-color);
+}
+.picture img {
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    height: 100%;
+    width: auto;
+    transform: translateX(-50%) scaleX(-1);
+}
 .downloader {
     position: absolute;
-    right: calc(var(--logo-border-width) / 2);
-    bottom: calc(var(--logo-border-width) / 2);
-    width: var(--data-size);
-    height: var(--data-size);
-    line-height: var(--subtitle-size);
-    font-size: var(--subtitle-size);
+    /* right: calc(var(--logo-border-width) / 2); */
+    /* bottom: calc(var(--logo-border-width) / 2); */
+    top: var(--logo-top);
+    right: var(--logo-front-shift);
+    transform: translateX(50%) scale(1.01);
+    width: var(--logo-width);
+    height: var(--logo-height);
+    line-height: var(--button-size);
+    font-size: var(--button-size);
+    font-weight: normal;
     background: none;
-    background-color: transparent;
     border: none;
+    background-color: transparent;
     color: var(--dark-color);
-    border-radius: 1.5vmin;
-    transition: color .3s ease-in-out, background-color .3s ease-in-out;
     text-align: center;
+    transition: background-color .3s ease-in-out;
+    mask-image: url(../img/elemento_logo_bg.svg);
+    mask-position: center top;
+    mask-repeat: no-repeat;
+    -webkit-mask-image: url(../img/elemento_logo_bg.svg);
+    -webkit-mask-position: center top;
+    -webkit-mask-repeat: no-repeat;
 }
 .downloader::after {
     content: '⇩';
     position: absolute;
     top: 50%;
     left: 50%;
-    width: var(--data-size);
-    height: var(--data-size);
-    transform: translateX(-50%) translateY(-25%);
+    width: var(--logo-width);
+    height: var(--logo-height);
+    transform: translateX(-50%) translateY(calc(-.4 * var(--button-size)));
 }
 .downloader:hover {
     cursor: pointer;
-    color: whitesmoke;
+    color: var(--accent-color);
     background-color: var(--dark-color);
+    font-weight: bold;
 }
