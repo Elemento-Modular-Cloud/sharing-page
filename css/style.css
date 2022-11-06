@@ -271,6 +271,7 @@ body {
     height: var(--logo-height);
     width: 50%;
     transform: translateY(-50%);
+    z-index: 10;
 }
 .picture::after
 {
@@ -279,9 +280,9 @@ body {
     position:absolute;
     width:100%;
     height:100%;
-    -moz-box-shadow:inset 0px 0px 6px 6px var(--dark-color);
-    -webkit-box-shadow:inset 0px 0px 6px 6px var(--dark-color);
-    box-shadow:inset 0px 0px 6px 6px var(--dark-color);
+    -moz-box-shadow:inset 0px 0px 6px 6px var(--dark-color), inset 0px 0px 6px 6px var(--dark-color);
+    -webkit-box-shadow:inset 0px 0px 6px 6px var(--dark-color), inset 0px 0px 6px 6px var(--dark-color);
+    box-shadow:inset 0px 0px 6px 6px var(--dark-color), inset 0px 0px 6px 6px var(--dark-color);
 }
 .picture img {
     position: absolute;
@@ -289,6 +290,10 @@ body {
     left: 30%;
     height: 100%;
     width: auto;
+    transform: translateX(-50%);
+    border-bottom: var(--dark-color) solid 2px;
+}
+.flip img {
     transform: translateX(-50%) scaleX(-1);
 }
 .downloader {
