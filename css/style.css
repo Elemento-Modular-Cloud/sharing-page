@@ -5,7 +5,7 @@
 
     --card-height: 27vmax;
     --card-width: 45vmax;
-    --card-hover-padding: 6vmax;
+    --card-hover-padding: 10vmax;
     --logo-height: 16.2vmax;
     --logo-front-shift: 27%;
 
@@ -46,7 +46,7 @@ body {
     width: 100%;
     height: 100%;
     opacity: 0;
-    z-index: 10;
+    z-index: 30;
 }
 .checkbox:checked {
     z-index: 0;
@@ -67,6 +67,7 @@ body {
     -webkit-perspective-origin: right;
     -moz-perspective-origin: right;
     perspective-origin: right;
+    z-index: 20;
 }
 .card {
     width: 100%;
@@ -85,7 +86,7 @@ body {
     -moz-transform-style: preserve-3d; 
     transform-style: preserve-3d;
     transition: .8s ease-in-out;
-    z-index: 0;
+    
 }
 .container::before {
     content: '';
@@ -202,7 +203,6 @@ body {
     justify-content: center;
     -webkit-align-items: center;
     align-items: center;
-    z-index: 2;
     -webkit-transform: rotateY(0deg);
     -moz-transform: rotateY(0deg);
     -ms-transform: rotateY(0deg);
@@ -271,7 +271,6 @@ body {
     height: var(--logo-height);
     width: 50%;
     transform: translateY(-50%);
-    z-index: 10;
 }
 .picture::after
 {
@@ -346,4 +345,42 @@ body {
 .downloader:hover::after {
     cursor: pointer;
     background-color: var(--accent-color);
+}
+.tooltip {
+    position: fixed;
+    top: calc(50vh + 0.5 * var(--card-height));
+    right: calc((100vw - var(--card-width)) / 2);
+    width: var(--card-width);
+}
+.tooltip::after {
+    content: "Hover or click";
+    position: absolute;
+    top: calc(100% + 0.5 * var(--small-size));
+    right: 1.5vmin;
+    z-index: 0;
+    font-family: herobold;
+}
+/* smartphones, touchscreens */
+@media (hover: none) and (pointer: coarse) {
+    .tooltip::after {
+        content: "Touch me";
+    }
+}
+/* stylus-based screens */
+@media (hover: none) and (pointer: fine) {
+    .tooltip::after {
+        content: "Touch me";
+    }
+}
+/* Nintendo Wii controller, Microsoft Kinect */
+@media (hover: hover) and (pointer: coarse) {
+    .tooltip::after {
+        content: "Hover or point";
+    }
+}
+/* mouse, touch pad */
+@media (hover: hover) and (pointer: fine) {
+    .tooltip::after {
+        content: "Hover or click";
+    }
 }
