@@ -5,6 +5,7 @@
 
     --card-height: 27vmax;
     --card-width: 45vmax;
+    --card-hover-padding: 6vmax;
     --logo-height: 16.2vmax;
     --logo-front-shift: 27%;
 
@@ -83,6 +84,16 @@ body {
     -moz-transform-style: preserve-3d; 
     transform-style: preserve-3d;
     transition: .8s ease-in-out;
+    z-index: 0;
+}
+.container::before {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--card-hover-padding));
+    left: calc(-1 * var(--card-hover-padding));
+    width: 100%;
+    height: 100%;
+    padding: var(--card-hover-padding);
 }
 .title {
     position: absolute;
@@ -95,6 +106,9 @@ body {
     color: var(--accent-color);
     transform: translateY(calc(50% - var(--title-size) / 3));
     text-align: center;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 .subtitle {
     position: absolute;
@@ -109,6 +123,9 @@ body {
     color: var(--medium-color);
     transform: translateY(calc(50% + var(--subtitle-size) / 1.5));
     text-align: center;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 .subtitle-left, .subtitle-right {
     width: 50%;
@@ -246,7 +263,6 @@ body {
     line-height: var(--subtitle-size);
     font-size: var(--subtitle-size);
 }
-
 .downloader {
     position: absolute;
     right: calc(var(--logo-border-width) / 2);
