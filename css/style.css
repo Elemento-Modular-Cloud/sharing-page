@@ -307,7 +307,6 @@ body {
     height: var(--logo-height);
     line-height: var(--button-size);
     font-size: var(--button-size);
-    font-weight: normal;
     background: none;
     border: none;
     background-color: transparent;
@@ -322,17 +321,29 @@ body {
     -webkit-mask-repeat: no-repeat;
 }
 .downloader::after {
-    content: '⇩';
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
     width: var(--logo-width);
     height: var(--logo-height);
-    transform: translateX(-50%) translateY(calc(-.4 * var(--button-size)));
+    background-color: var(--dark-color);
+    transition: background-color .3s ease-in-out;
+    mask-size: 50%;
+    mask-image: url(../img/cloud-download.svg);
+    mask-position: center center;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 50%;
+    -webkit-mask-image: url(../img/cloud-download.svg);
+    -webkit-mask-position: center center;
+    -webkit-mask-repeat: no-repeat;
+    transform: translateX(-50%) translateY(-50%);
 }
 .downloader:hover {
     cursor: pointer;
-    color: var(--accent-color);
     background-color: var(--dark-color);
-    font-weight: bold;
+}
+.downloader:hover::after {
+    cursor: pointer;
+    background-color: var(--accent-color);
 }
