@@ -87,7 +87,7 @@ body {
     -moz-transform-style: preserve-3d; 
     transform-style: preserve-3d;
     transition: .8s ease-in-out;
-    animation: .8s 3s autohover ease-in-out forwards;
+    animation: .8s 1.5s autohover ease-in-out forwards;
     transform-origin: center top;
 }
 @keyframes autohover {
