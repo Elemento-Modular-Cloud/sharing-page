@@ -8,6 +8,7 @@
     --card-hover-padding: 10vmax;
     --logo-height: 16.2vmax;
     --logo-front-shift: 27%;
+    --icon-animation-range: 2%;
 
     --logo-width: var(--logo-height);
     --logo-top: calc((var(--card-height) - var(--logo-height)) / 2);
@@ -352,7 +353,24 @@ body {
     -webkit-mask-image: url(../img/cloud-download.svg);
     -webkit-mask-position: center center;
     -webkit-mask-repeat: no-repeat;
-    transform: translateX(-50%) translateY(-50%);
+    animation: bounce .8s infinite;
+}
+@keyframes bounce {
+    0% {
+        transform: translateX(-50%) translateY(-50%);
+    }
+    25% {
+        transform: translateX(-50%) translateY(calc(-50% + var(--icon-animation-range)));
+    }
+    50% {
+        transform: translateX(-50%) translateY(-50%);
+    }
+    75% {
+        transform: translateX(-50%) translateY(calc(-50% - var(--icon-animation-range)));
+    }
+    100% {
+        transform: translateX(-50%) translateY(-50%);
+    }
 }
 .downloader:hover {
     cursor: pointer;
