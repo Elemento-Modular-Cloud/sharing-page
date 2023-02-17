@@ -1,10 +1,11 @@
 :root {
     --accent-color: #FFA601;
     --medium-color: whitesmoke;
+    --medium-grey: #a7acb7;
     --dark-color: #0E1119;
 
-    --card-height: 27vmax;
-    --card-width: 45vmax;
+    --card-height: 40vmax;
+    --card-width: 55vmax;
     --card-hover-padding: 10vmax;
     --logo-height: 16.2vmax;
     --logo-front-shift: 27%;
@@ -22,6 +23,7 @@
     --data-size: calc(var(--card-width) / 15);
     --subtitle-size: calc(var(--card-width) / 25);
     --small-size: calc(var(--card-width) / 35);
+    --smaller-size: calc(var(--card-width) / 40);
     --text-width: calc(var(--card-width) - var(--logo-front-shift) - var(--logo-width) / 2 - var(--logo-border-width) / 2);
 }
 
@@ -35,7 +37,7 @@ html {
 body {
     margin: 0;
     background: var(--accent-color);
-    height: 100vh;
+    height: 100%;
     display: -webkit-flex;
     display: flex;
     -webkit-align-items: center; 
@@ -105,7 +107,7 @@ body {
         transform: rotateY(180deg)  scale(1.1);
     }
 }
-.container:hover .card, .checkbox:checked + .card {
+.container .card {
     -webkit-transform: rotateY(180deg)  scale(1.1);
     -moz-transform: rotateY(180deg)  scale(1.1);
     -ms-transform: rotateY(180deg)  scale(1.1);
@@ -256,19 +258,20 @@ body {
     position: absolute;
     border-spacing: .5vmin;
     /* top: calc(2 * var(--subtitle-size)); */
-    bottom: calc(var(--subtitle-size) * 2);
+    top: 50%;
     left: var(--subtitle-size);
     color: var(--medium-color);
-    transform: translateY(50%);
+    transform: translateY(-50%);
+    margin-right: calc(var(--logo-front-shift) * 2);
 }
-.name, .function, .phone, .email, .linkedin, .website {
+.name, .function, .phone, .email, .linkedin, .website, .explanation {
     display: table-row;
     height: var(--data-size);
     line-height: var(--data-size);
     font-size: var(--data-size);
 }
 
-.function, .phone, .email, .linkedin, .website {
+.function, .phone, .email, .linkedin, .website, .explanation {
     font-family: heroregular;
     height: var(--small-size);
     line-height: var(--small-size);
@@ -280,6 +283,16 @@ body {
     height: var(--subtitle-size);
     line-height: var(--subtitle-size);
     font-size: var(--subtitle-size);
+}
+.explanation {
+    font-family: "Open Sans";
+    height: var(--smaller-size);
+    line-height: var(--subtitle-size);
+    font-size: var(--small-size);
+    color: var(--medium-grey);
+}
+.accent-text {
+    color: var(--accent-color);
 }
 .picture {
     position: absolute;
