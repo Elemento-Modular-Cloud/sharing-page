@@ -36,7 +36,8 @@ html {
 }
 body {
     margin: 0;
-    background: var(--accent-color);
+    /* background: var(--accent-color); */
+    /* background-image: url(../img/midjourney-last.png); */
     height: 100%;
     display: -webkit-flex;
     display: flex;
